@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    // Базовые настройки
+    "target": "ES2020",
+    "module": "CommonJS",
+    "rootDir": "./src",
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "allowJs": false,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    
+    // Строгая типизация
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitReturns": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    
+    // Декораторы для NestJS
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    // Типы Node
+    "types": ["node"],
+
+    // Пропуск проверки библиотек
+    "skipLibCheck": true,
+
+    // Библиотеки (опционально)
+    "lib": ["ES2020"]
+  },
+  "exclude": ["node_modules", "dist"]
+}

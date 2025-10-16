@@ -1,13 +1,12 @@
 import { Context } from "grammy";
-import { UsersServcie } from "../../domain_service/users/users.service";
 import { CreateUserDto, DeleteUserDto, GetUserByTelegramIdDto, SortUsersDto, UpdateUserDto } from "../../endpoints/users/user.dto";
-
+import { UsersService } from "../../domain_service/users/users.service";
 export function getTelegramId(ctx: Context): number | null {
   return ctx.from?.id ?? null;
 }
 
 export class UsersTelegramController {
-    constructor (private readonly usersService: UsersServcie){}
+    constructor (private readonly usersService: UsersService){}
    
     async create(ctx: Context) {
         const telegramId = getTelegramId(ctx);
@@ -23,7 +22,7 @@ export class UsersTelegramController {
             languageCode: ctx.from?.language_code ?? null,
             phoneNumber: null,
             isBot: ctx.from!.is_bot,
-            ...(ctx.from?.username && { username: ctx.from.username }), 
+            username: ctx.from?.username ?? null,
         };
 
         try {

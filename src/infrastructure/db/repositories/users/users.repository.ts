@@ -1,6 +1,6 @@
-import { User } from '../../model/users.entity';
+import { User } from '../../models/Users';
 import { db } from '../../postgres';
-import { users } from '../../schema';
+import { users } from '../../models/Users';
 import { IUsersRepository } from './IUsersRepository';
 import { eq, asc, desc} from 'drizzle-orm';
 import { SortableUserFields } from '../../../../shared/types/SortableUserFields';

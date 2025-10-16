@@ -1,8 +1,8 @@
 import { IUsersRepository } from "../../infrastructure/db/repositories/users/IUsersRepository";
-import { User } from "../../infrastructure/db/model/users.entity";
+import { User } from "../../infrastructure/db/models/Users";
 import { CheckUserExistsDto, CreateUserDto, DeleteUserDto, GetUserByTelegramIdDto, GetUserByUsernameDto, ListUsersPaginatedDto, SortUsersDto, UpdateUserDto } from "../../endpoints/users/user.dto";
 
-export class UsersServcie {
+export class UsersService {
 
     constructor(private readonly usersRepo: IUsersRepository){}
 

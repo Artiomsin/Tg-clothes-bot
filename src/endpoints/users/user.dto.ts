@@ -2,14 +2,15 @@ import { SortableUserFields } from "../../shared/types/SortableUserFields";
 
 export type CreateUserDto = {
   telegramId: number;
-  username?: string | null;
+  username: string | null;
   firstName: string;
   lastName: string | null;
   languageCode: string | null;
-  phoneNumber?: string | null;
+  phoneNumber: string | null;
   isBot: boolean;
   role?: string;
 };
+
 
 export type UpdateUserDto = {
   telegramId: number;

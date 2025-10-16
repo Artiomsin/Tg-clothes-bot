@@ -1,5 +1,5 @@
 module.exports = {
-  schema: './src/infrastructure/db/schema.ts',
+  schema: './src/infrastructure/db/models',
   out: './drizzle',
   dialect: 'postgresql',
   dbCredentials: {
@@ -10,4 +10,5 @@ module.exports = {
     database: 'clothes_db',
     ssl: false,
   },
+
 };

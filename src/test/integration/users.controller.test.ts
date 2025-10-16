@@ -1,7 +1,7 @@
 import { describe, it, expect, vi, beforeAll } from 'vitest';
 import { db } from '../../infrastructure/db/postgres';
-import { users } from '../../infrastructure/db/schema';
-import { UsersServcie } from '../../domain_service/users/users.service';
+import { users } from '../../infrastructure/db/models/Users';
+import { UsersService } from '../../domain_service/users/users.service';
 import { UsersTelegramController } from '../../endpoints/users/users.controller';
 import { UsersRepository } from '../../infrastructure/db/repositories/users/users.repository';
 import { Context } from 'grammy';
@@ -37,7 +37,7 @@ function createMockCtx(
 
 describe('UsersTelegramController (integration)', () => {
   const repo = new UsersRepository();
-  const service = new UsersServcie(repo);
+  const service = new UsersService(repo);
   const controller = new UsersTelegramController(service);
 
   beforeAll(async () => {
@@ -139,6 +139,7 @@ describe('UsersTelegramController (integration)', () => {
       isBot: false,
       languageCode: "ru",
       role: "user",
+      phoneNumber: null,
     });
 
     await service.create({

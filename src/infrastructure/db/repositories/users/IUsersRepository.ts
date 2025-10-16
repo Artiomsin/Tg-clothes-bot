@@ -1,4 +1,4 @@
-import { User } from '../../model/users.entity';
+import { User } from '../../models/Users';
 import { SortableUserFields } from '../../../../shared/types/SortableUserFields';
 
 export interface IUsersRepository {
